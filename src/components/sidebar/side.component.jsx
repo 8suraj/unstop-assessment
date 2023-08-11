@@ -5,15 +5,14 @@ import assessmentLogo from '../../assets/svgs/assessment.svg';
 import libraryLogo from '../../assets/svgs/library.svg';
 import roundLogo from '../../assets/svgs/round.svg';
 
-export default function SideBar() {
+export default function SideBar({ onClose }) {
 	return (
-		<div className='w-screen bg-black/10	'>
-			<menu className='w-10/12 bg-white h-screen 2xl:w-40 lg:w-40 '>
-				{/* lg:pt-4 lg:pb-5 lg:pl-7 lg:pr-5 */}
+		<>
+			<menu className='transition w-10/12 bg-white  2xl:w-40 lg:w-40 h-screen absolute z-10'>
 				<ul className='list-none p-5 py-10'>
 					<li className='flex justify-between  h-9 2xl:hidden lg:hidden'>
 						<div>Menu</div>
-						<div>
+						<div onClick={() => onClose(false)}>
 							<img src={crossLogo} alt='' />
 						</div>
 					</li>
@@ -47,6 +46,6 @@ export default function SideBar() {
 					</li>
 				</ul>
 			</menu>
-		</div>
+		</>
 	);
 }

@@ -1,7 +1,9 @@
 import plusLogo from '../../assets/svgs/plus.svg';
-export default function NewAssessment() {
+export default function NewAssessment({ setAssessment }) {
 	return (
-		<div className='flex flex-col items-center border border-[#DADCE0] border-dashed	rounded-xl	px-[1.9rem] py-5 bg-[#F6F8FA]'>
+		<div
+			className='flex flex-col items-center border border-[#DADCE0] border-dashed	rounded-xl	px-[1.9rem] py-5 bg-[#F6F8FA] cursor-pointer'
+			onClick={() => setAssessment(true)}>
 			<div className='rounded-full bg-white w-[3.2rem] h-[3.2rem] flex items-center justify-center'>
 				<img src={plusLogo} alt='' />
 			</div>

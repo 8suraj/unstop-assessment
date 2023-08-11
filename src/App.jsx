@@ -3,11 +3,11 @@ import {
 	createBrowserRouter,
 	RouterProvider,
 } from 'react-router-dom';
-import { AssessmentCreator } from './components';
+import Index from './router/index.router';
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <AssessmentCreator />,
+		element: <Index />,
 	},
 ]);
 function App() {
