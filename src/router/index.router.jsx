@@ -17,21 +17,22 @@ export default function Index() {
 	const [assessment, setAssessment] = useState(false);
 	return (
 		<>
-			<div className='relative flex  h-screen w-full'>
+			<div className='relative flex  h-screen  lg:flex-col   w-full'>
 				{(menu || assessment) && (
-					<div className=' fixed bg-black opacity-50 left-0 right-0 top-0 bottom-0 lg:hidden ' />
+					<div className=' fixed bg-black opacity-50 left-0 right-0 top-0 bottom-0 z-[15] ' />
 				)}
-				{menu && <SideBar onClose={setMenu} />}
-				{assessment && (
-					<AssessmentCreator onClose={setAssessment} />
-				)}
+				<SideBar onClose={setMenu} active={menu} />
+
+				<AssessmentCreator
+					onClose={setAssessment}
+					active={assessment}
+				/>
+
 				<div
-					className={`${
-						menu || assessment
-							? 'overflow-hidden w-full'
-							: 'w-full'
+					className={`w-full lg:w-[89%]  lg:ml-40 lg:px-4  ${
+						menu || assessment ? 'overflow-hidden ' : ''
 					}`}>
-					<div className='w-full flex items-center px-4 text-base font-semibold py-4  '>
+					<div className='w-full flex items-center px-4 text-base font-semibold py-4 lg:hidden  '>
 						<div className='flex items-center w-full gap-4'>
 							<img
 								src={humburgerLogo}
@@ -45,7 +46,16 @@ export default function Index() {
 							<img src={Comp} alt='' />
 						</div>
 					</div>
-					<nav className='border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium '>
+					<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border'>
+						<NavLink
+							to='asd'
+							className={({ isActive }) =>
+								isActive
+									? 'hidden py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6] '
+									: 'hidden py-[.65rem] px-4  '
+							}>
+							Assessments
+						</NavLink>
 						<NavLink
 							className={({ isActive }) =>
 								isActive
@@ -60,18 +70,18 @@ export default function Index() {
 							className={({ isActive }) =>
 								isActive
 									? 'py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6]'
-									: 'py-[.65rem] px-4 '
+									: 'py-[.65rem] px-4 lg:hidden'
 							}>
 							Unstop Assessments
 						</NavLink>
 					</nav>
 
-					<div className='flex flex-col py-5 px-4 gap-4 '>
-						<div className='flex justify-between items-center'>
-							<div className='font-semibold text-base'>
+					<div className=' flex flex-col py-5 px-4 gap-4 bg-white lg:grid lg:grid-cols-3  lg:w-full lg:gap-[1.8rem] lg:p-5'>
+						<div className='flex justify-between items-center lg:hidden w-max-full'>
+							<div className='font-semibold text-base '>
 								My Assessment
 							</div>
-							<div className='flex gap-5 items-center'>
+							<div className='flex gap-5 items-center '>
 								<div>
 									<img src={searchIcon} alt='' />
 								</div>

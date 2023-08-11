@@ -64,7 +64,7 @@ export default function Assessment() {
 						Share
 					</div>
 
-					<div className=' relative max-w-[6rem] w-16 h-[1rem] -z-10 '>
+					<div className=' relative max-w-[6rem] w-16 h-[1rem] z-10 '>
 						<div className='absolute border border-white bg-[#E9407A] text-white rounded-full text-[.9rem] p-1 px-[.5rem] w-[2rem] h-[2rem] top-0 left-2/4	 transform -translate-x-full -translate-y-1/4'>
 							LP
 						</div>
