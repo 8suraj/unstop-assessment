@@ -16,6 +16,10 @@
 .transition2 {
 	animation: slideIn2 0.5s ease-in-out forwards;
 }
+.trs {
+	left: 50%;
+	/* transform: rotate(10deg); */
+}
 @keyframes slideIn1 {
 	0% {
 		transform: translateX(-100%);
@@ -30,6 +34,6 @@
 		transform: translateY(200%);
 	}
 	100% {
-		transform: translateY(0);
+		transform: translateY(0) translateX(-50%);
 	}
 }

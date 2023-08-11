@@ -83,12 +83,12 @@ export function InputWithDisplay({
 				<div className='flex rounded-full  bg-[#DDEDFF] p-1 px-2 m-1 text-[.75rem]'>
 					UI/UX and Design <img src={crossLogo} alt='' />
 				</div>
-				<div className='flex rounded-full  bg-[#DDEDFF] p-1 px-2 m-1 text-[.75rem]'>
+				{/* <div className='flex rounded-full  bg-[#DDEDFF] p-1 px-2 m-1 text-[.75rem]'>
 					UI/UX and Design <img src={crossLogo} alt='' />
 				</div>
 				<div className='flex rounded-full  bg-[#DDEDFF] p-1 px-2 m-1 text-[.75rem]'>
 					UI/UX and Design <img src={crossLogo} alt='' />
-				</div>
+				</div> */}
 			</div>
 			<input
 				type='text'

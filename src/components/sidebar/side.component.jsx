@@ -5,10 +5,15 @@ import assessmentLogo from '../../assets/svgs/assessment.svg';
 import libraryLogo from '../../assets/svgs/library.svg';
 import roundLogo from '../../assets/svgs/round.svg';
 
-export default function SideBar({ onClose }) {
+export default function SideBar({ onClose, active }) {
 	return (
 		<>
-			<menu className='transition w-10/12 bg-white  2xl:w-40 lg:w-40 h-screen absolute z-10'>
+			<menu
+				className={`${
+					active
+						? 'transition w-10/12 bg-white  h-screen  absolute z-20'
+						: 'hidden lg:block 2xl:w-40 lg:w-40 lg:fixed z-10 bg-white h-screen'
+				}`}>
 				<ul className='list-none p-5 py-10'>
 					<li className='flex justify-between  h-9 2xl:hidden lg:hidden'>
 						<div>Menu</div>

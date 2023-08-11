@@ -9,11 +9,19 @@ const options = [
 	{ value: 1, label: 'Practice' },
 	{ value: 2, label: 'Mock' },
 ];
-export default function AssessmentCreator({ onClose }) {
+export default function AssessmentCreator({
+	onClose,
+	active,
+}) {
 	return (
 		<>
-			<div className='bg-white w-full flex flex-col rounded-t-xl absolute top-[25vh]  max-h-[75vh]	z-0 transition2'>
-				<div className='  flex justify-between border-b border-[#DADCE0] bg-white  rounded-t-xl items-center  p-4 py-2  fixed  top-0 left-0 right-0 z-10 '>
+			<div
+				className={`${
+					active
+						? 'bg-white w-full flex flex-col rounded-t-xl absolute top-[25vh]  max-h-[75vh]	z-20 transition2 lg:w-4/12 lg:top-[5vh] lg:h-[90vh] lg:max-h-[90vh]  lg:rounded-xl  trs	'
+						: 'hidden '
+				}`}>
+				<div className='  flex justify-between border-b border-[#DADCE0] bg-white  rounded-t-xl items-center  p-4 py-2      '>
 					<div>Sub-Section Details</div>
 					<div
 						className='rounded-full bg-red-100 w-10 h-10 flex items-center justify-center'
@@ -21,7 +29,7 @@ export default function AssessmentCreator({ onClose }) {
 						<img src={crossLogo} alt='' />
 					</div>
 				</div>
-				<div className='flex flex-col p-4 mt-10 mb-10 overflow-y-auto'>
+				<div className='flex flex-col p-4   overflow-y-auto '>
 					<TextInput label='Name of assessment' required />
 					<SelectInput
 						options={options}
@@ -34,7 +42,7 @@ export default function AssessmentCreator({ onClose }) {
 					<InputWithDisplay label='Skills' />
 					<TextInput label='Name of assessment' required />
 				</div>
-				<div className='fixed bottom-0 left-0 right-0 bg-white p-4'>
+				<div className=' bg-white p-2 lg:rounded-b-xl'>
 					<Button />
 				</div>
 			</div>
