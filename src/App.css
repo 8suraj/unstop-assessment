@@ -1,0 +1,35 @@
+::-webkit-scrollbar {
+	width: 0.1em;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.transition {
+	animation: slideIn1 0.5s ease-in-out forwards;
+}
+.transition2 {
+	animation: slideIn2 0.5s ease-in-out forwards;
+}
+@keyframes slideIn1 {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideIn2 {
+	0% {
+		transform: translateY(200%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
