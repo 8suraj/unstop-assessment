@@ -1,4 +1,3 @@
-// Importing necessary assets
 import assessmentLogo from '../../assets/svgs/assessment1.svg';
 import clockLogo from '../../assets/svgs/clock.svg';
 import moreLogo from '../../assets/svgs/more.svg';
