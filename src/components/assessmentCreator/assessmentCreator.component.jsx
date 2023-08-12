@@ -49,6 +49,7 @@ export default function AssessmentCreator({
 					<TextInput
 						label='Duration of assessment'
 						placeHolder='HH:MM:SS'
+						type='text'
 						required
 					/>
 				</div>

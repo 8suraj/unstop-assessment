@@ -4,6 +4,7 @@ import crossLogo from '../../assets/svgs/cross.svg';
 export function TextInput({
 	label = '',
 	name = '',
+	type = 'text',
 	onChange = null,
 	placeHolder = 'Type Here',
 	required,
@@ -13,7 +14,7 @@ export function TextInput({
 		<div className='flex flex-col p-1'>
 			<label htmlFor={name}>{label}</label>
 			<input
-				type='text'
+				type={type}
 				name={name}
 				required={required}
 				onChange={onChange}
