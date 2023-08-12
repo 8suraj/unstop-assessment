@@ -7,13 +7,16 @@ import libraryLogo from '../../assets/svgs/library.svg';
 import roundLogo from '../../assets/svgs/round.svg';
 import { ActionTypes } from '../../context/nav.context';
 
+// Sidebar component
 export default function SideBar({ onClose, active }) {
+	// Define classes for the sidebar based on the 'active' prop
 	const sidebarClasses = active
 		? 'transition w-10/12 bg-white h-screen absolute z-20'
 		: 'hidden lg:block 2xl:w-40 lg:w-40 lg:fixed z-10 bg-white h-screen';
 
 	return (
 		<menu className={sidebarClasses}>
+			{/* Sidebar header */}
 			<div className='p-5 py-10'>
 				<div className='flex justify-between h-9 2xl:hidden lg:hidden'>
 					<div>Menu</div>
@@ -24,6 +27,7 @@ export default function SideBar({ onClose, active }) {
 						<img src={crossLogo} alt='' />
 					</div>
 				</div>
+				{/* Navigation links */}
 				<NavLink
 					className={({ isActive }) =>
 						isActive
@@ -60,7 +64,9 @@ export default function SideBar({ onClose, active }) {
 					</div>
 					My Library
 				</NavLink>
+				{/* Divider */}
 				<hr className='my-[10px] h-px border-1 border-[#BACBD5] border-dashed' />
+				{/* Admin status link */}
 				<NavLink
 					className={({ isActive }) =>
 						isActive

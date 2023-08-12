@@ -14,12 +14,13 @@ import statIcon from '../../assets/svgs/stat.svg';
 import { useToggle } from '../../context/nav.context';
 import { ActionTypes } from '../../context/nav.context';
 
-//options for slect menu
+// Options for the select menu
 const options = [
 	{ value: 1, label: 'Practice' },
 	{ value: 2, label: 'Mock' },
 ];
 
+// Main component for handling Assessment Router
 export default function AssessmentRouter() {
 	const { state, dispatch } = useToggle();
 	const [assessment, setAssessment] = useState(false);
@@ -29,6 +30,7 @@ export default function AssessmentRouter() {
 			{assessment && (
 				<div className=' fixed bg-black opacity-50 left-0 right-0 top-0 bottom-0 z-[15] ' />
 			)}
+			{/* Component to Create a Assessment */}
 			<AssessmentCreator
 				onClose={setAssessment}
 				active={assessment}
@@ -38,7 +40,8 @@ export default function AssessmentRouter() {
 				className={`w-full lg:w-[89%]  lg:ml-40 lg:px-4  ${
 					state || assessment ? 'overflow-hidden ' : ''
 				}`}>
-				<div className='w-full flex items-center px-4 text-base font-semibold py-4 lg:hidden  '>
+				{/* Navigation Bar */}
+				<div className='w-full flex items-center px-4 text-base font-semibold py-4 lg:hidden'>
 					<div className='flex items-center w-full gap-4'>
 						<img
 							src={humburgerLogo}
@@ -54,6 +57,7 @@ export default function AssessmentRouter() {
 						<img src={Comp} alt='' />
 					</div>
 				</div>
+				{/* Navigation Tabs */}
 				<div className='bg-white'>
 					<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border py-2'>
 						<NavLink
@@ -61,6 +65,7 @@ export default function AssessmentRouter() {
 							className='hidden py-[.65rem] px-4  lg:block   text-xl font-semibold '>
 							Assessments
 						</NavLink>
+						{/* Divider */}
 						<div className='px-5 hidden lg:block'>
 							<svg
 								width='2'
@@ -71,6 +76,7 @@ export default function AssessmentRouter() {
 								<path d='M1 0V46' stroke='#DADCE0' />
 							</svg>
 						</div>
+						{/* Tabs */}
 						<NavLink
 							className={({ isActive }) =>
 								isActive
@@ -79,7 +85,6 @@ export default function AssessmentRouter() {
 							}>
 							My Assessments
 						</NavLink>
-
 						<NavLink
 							to='/'
 							className={({ isActive }) =>
@@ -90,16 +95,21 @@ export default function AssessmentRouter() {
 							Unstop Assessments
 						</NavLink>
 					</nav>
+					{/* Overview Section */}
 					<Overview />
 
+					{/* Heading */}
 					<h1 className='px-4 font-medium text-[1.15rem] hidden lg:block'>
 						My Assessment
 					</h1>
+					{/* Assessment List */}
 					<div className=' flex flex-col py-5 px-4 gap-4  lg:grid lg:grid-cols-3  lg:w-full lg:gap-[1.8rem] lg:p-5'>
+						{/* Mobile Header */}
 						<div className='flex justify-between items-center lg:hidden w-max-full'>
 							<div className='font-semibold text-base '>
 								My Assessment
 							</div>
+							{/* Icons */}
 							<div className='flex gap-5 items-center '>
 								<div>
 									<img src={searchIcon} alt='' />
@@ -112,6 +122,7 @@ export default function AssessmentRouter() {
 								</div>
 							</div>
 						</div>
+						{/* Components */}
 						<NewAssessment setAssessment={setAssessment} />
 						<Assessment />
 						<Assessment />
