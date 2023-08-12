@@ -19,6 +19,7 @@ const options = [
 export default function Index() {
 	const [menu, setMenu] = useState(false);
 	const [assessment, setAssessment] = useState(false);
+
 	return (
 		<>
 			<div className='relative flex  h-screen  lg:flex-col   w-full'>

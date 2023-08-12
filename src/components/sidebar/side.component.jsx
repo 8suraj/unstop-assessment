@@ -38,7 +38,7 @@ export default function SideBar({ onClose, active }) {
 							? '  nav-styles  nav-active'
 							: '  nav-styles   '
 					}
-					to='/assessments'>
+					to='/'>
 					<div>
 						<img src={assessmentLogo} alt='' />
 					</div>
