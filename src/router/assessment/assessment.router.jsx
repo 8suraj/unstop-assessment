@@ -37,7 +37,7 @@ export default function AssessmentRouter() {
 				options={options}
 			/>
 			<div
-				className='fixed rounded-full bg-[#0073E6] bottom-[15vh] right-[1vh] w-9 h-9 flex items-center justify-center lg:hidden'
+				className='fixed rounded-full bg-[#0073E6] bottom-[15vh] right-[2vh] w-12 h-12 flex items-center justify-center lg:hidden'
 				onClick={() => setAssessment(true)}>
 				<div>
 					<svg
@@ -76,7 +76,7 @@ export default function AssessmentRouter() {
 				</div>
 				{/* Navigation Tabs */}
 				<div className='bg-white'>
-					<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border py-2'>
+					<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border '>
 						<NavLink
 							to='assessment'
 							className='hidden py-[.65rem] px-4  lg:block   text-xl font-semibold '>

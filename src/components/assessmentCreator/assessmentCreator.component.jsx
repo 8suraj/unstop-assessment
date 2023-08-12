@@ -22,7 +22,7 @@ export default function AssessmentCreator({
 			{/* Container for the assessment creator */}
 			<div className={containerClasses}>
 				<div className='flex justify-between border-b border-[#DADCE0] bg-white rounded-t-xl items-center p-4 py-2'>
-					<div className='font-semibold text-xl'>
+					<div className='font-semibold lg:text-xl text-lg'>
 						Create new assessment
 					</div>
 					<div

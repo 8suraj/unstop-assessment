@@ -8,7 +8,7 @@ export default function Overview() {
 	return (
 		<div className='w-full lg:p-5 flex flex-col lg:gap-4 items-center '>
 			{/* Title */}
-			<div className='lg:font-medium lg:text-[1.15rem] text-left w-full px-3'>
+			<div className='font-medium lg:text-[1.15rem] text-left w-full px-3 py-1 text-base'>
 				Assessments Overview
 			</div>
 			{/* Overview grid */}
