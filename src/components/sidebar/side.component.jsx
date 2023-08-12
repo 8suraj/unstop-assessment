@@ -1,4 +1,3 @@
-import './sidebar.styles.scss';
 import { NavLink } from 'react-router-dom';
 import crossLogo from '../../assets/svgs/cross.svg';
 import dashBoardLogo from '../../assets/svgs/dashboard.svg';
