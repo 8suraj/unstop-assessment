@@ -3,11 +3,34 @@ import {
 	createBrowserRouter,
 	RouterProvider,
 } from 'react-router-dom';
-import Index from './router/index.router';
+import {
+	AssessmentRouter,
+	// DashboardRouter,
+} from './router';
+import DashboardRouter from './router/dashboard/dashboard.router';
+import { Navigation } from './components';
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Index />,
+		element: <Navigation />,
+		children: [
+			{
+				path: '',
+				element: <DashboardRouter text='Dashboard' />,
+			},
+			{
+				path: 'assessment',
+				element: <AssessmentRouter />,
+			},
+			{
+				path: 'library',
+				element: <DashboardRouter text='Library' />,
+			},
+			{
+				path: 'status',
+				element: <DashboardRouter text='Round Status' />,
+			},
+		],
 	},
 ]);
 function App() {
