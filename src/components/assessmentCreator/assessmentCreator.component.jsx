@@ -46,7 +46,11 @@ export default function AssessmentCreator({
 							'WebDev Skill',
 						]}
 					/>
-					<TextInput label='Name of assessment' required />
+					<TextInput
+						label='Duration of assessment'
+						placeHolder='HH:MM:SS'
+						required
+					/>
 				</div>
 				<div className='bg-white p-2 lg:rounded-b-xl'>
 					<Button />
