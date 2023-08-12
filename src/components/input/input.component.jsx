@@ -1,5 +1,6 @@
 import crossLogo from '../../assets/svgs/cross.svg';
 
+// TextInput component for single-line text input
 export function TextInput({
 	label = '',
 	name = '',
@@ -19,11 +20,13 @@ export function TextInput({
 				placeholder={placeHolder}
 				className='rounded-lg mt-1 input-styles'
 			/>
+			{/* Display error if provided */}
 			{error && <div className='error-styles'>{error}</div>}
 		</div>
 	);
 }
 
+// SelectInput component for dropdown select input
 export function SelectInput({
 	label,
 	options = [],
@@ -43,6 +46,7 @@ export function SelectInput({
 				value={value}
 				onChange={onChange}
 				className='rounded-lg mt-1 text-[#8DA4BF] input-styles'>
+				{/* Mapping over options to generate dropdown items */}
 				{options.map((option, index) => (
 					<option key={index} value={option.value}>
 						{option.label}
@@ -53,6 +57,7 @@ export function SelectInput({
 	);
 }
 
+// InputWithDisplay component for input with tags display
 export function InputWithDisplay({
 	label = '',
 	name = '',
@@ -66,6 +71,7 @@ export function InputWithDisplay({
 		<div className='flex flex-col p-1'>
 			<label htmlFor={name}>{label}</label>
 			<div className='border border-[#DADCE0] rounded-t-lg border-b-0 flex flex-wrap p-4'>
+				{/* Using renderTag function to render tags */}
 				{renderTags && renderTag(renderTags)}
 			</div>
 			<input
@@ -76,15 +82,18 @@ export function InputWithDisplay({
 				placeholder={placeHolder}
 				className={`input-styles rounded-b-lg`}
 			/>
+			{/* Display error if provided */}
 			{error && <div className='error-styles'>{error}</div>}
 		</div>
 	);
 }
 
+// Helper function to render tags
 function renderTag(tags) {
 	return tags.map((tag, index) => (
 		<div key={index} className='tag-styles'>
-			{tag} <img src={crossLogo} alt='' />
+			{tag}
+			<img src={crossLogo} alt='' />{' '}
 		</div>
 	));
 }

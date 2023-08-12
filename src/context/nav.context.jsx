@@ -4,8 +4,10 @@ import {
 	useReducer,
 } from 'react';
 
+// Create a context for toggling
 const ToggleContext = createContext();
 
+// Reducer function for toggling state
 const reducer = (state, action) => {
 	switch (action.type) {
 		case ActionTypes.Active:
@@ -16,7 +18,8 @@ const reducer = (state, action) => {
 			return false;
 	}
 };
-//the context provider for the mobile menu
+
+// Context provider for the mobile menu toggle
 export const ToggleProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, false);
 
@@ -26,7 +29,8 @@ export const ToggleProvider = ({ children }) => {
 		</ToggleContext.Provider>
 	);
 };
-//custome hook to get state and the dispatcher
+
+// Custom hook to get state and dispatcher from context
 export const useToggle = () => {
 	const context = useContext(ToggleContext);
 	if (!context) {
@@ -36,7 +40,8 @@ export const useToggle = () => {
 	}
 	return context;
 };
-//
+
+// Action types for toggling
 export const ActionTypes = {
 	Active: 'Active',
 	InActive: 'InActive',

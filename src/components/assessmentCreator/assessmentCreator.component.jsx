@@ -6,17 +6,20 @@ import {
 } from '../input/input.component';
 import Button from '../button/button.component';
 
+// AssessmentCreator component
 export default function AssessmentCreator({
 	onClose,
 	active,
 	options,
 }) {
+	// Determine container classes based on 'active' prop
 	const containerClasses = active
 		? 'bg-white w-full flex flex-col rounded-t-xl absolute top-[25vh] max-h-[75vh] z-20 transition2 lg:w-4/12 lg:top-[5vh] lg:h-[90vh] lg:max-h-[90vh] lg:rounded-xl trs'
 		: 'hidden';
 
 	return (
 		<>
+			{/* Container for the assessment creator */}
 			<div className={containerClasses}>
 				<div className='flex justify-between border-b border-[#DADCE0] bg-white rounded-t-xl items-center p-4 py-2'>
 					<div>Sub-Section Details</div>
