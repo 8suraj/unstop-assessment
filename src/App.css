@@ -62,3 +62,26 @@
 .nav-active {
 	@apply border border-[#0073E6] text-[#0073E6] bg-[#E5F1FC];
 }
+
+.overview-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 2px 2px;
+	grid-template-areas:
+		'ta tp'
+		'c c'
+		'cs cs';
+}
+.ta {
+	grid-area: ta;
+}
+.tp {
+	grid-area: tp;
+}
+.c {
+	grid-area: c;
+}
+.cs {
+	grid-area: cs;
+}

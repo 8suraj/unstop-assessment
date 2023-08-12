@@ -5,31 +5,34 @@ import clipLogo from '../../assets/svgs/clip2.svg';
 
 export default function Overview() {
 	return (
-		<div className='w-full p-5 lg:flex flex-col gap-4 hidden'>
-			<div className='font-medium text-[1.15rem]'>
+		<div className='w-full lg:p-5 flex flex-col lg:gap-4 items-center '>
+			<div className='lg:font-medium lg:text-[1.15rem] text-left  w-full px-3'>
 				Assessments Overview
 			</div>
-			<div className='flex divide-x-2 border border-[#DADCE0] rounded-xl'>
+			<div className='lg:w-full lg:flex lg:divide-x-2 border border-[#DADCE0] rounded-xl overview-grid w-[95%] justify-center overflow-hidden'>
 				<OverviewCard
 					icon={equalLogo}
 					label='Total Assessment'
 					value='34'
+					className='ta border-b border-r border-black lg:border-0 lg:border-[#DADCE0]'
 				/>
-				<CandidatesCard />
-				<CandidatesSourceCard />
+				<CandidatesCard className='c border-b border-t border-black lg:border-0 lg:border-[#DADCE0]' />
+				<CandidatesSourceCard className='cs border-t  border-black lg:border-0 lg:border-[#DADCE0]' />
 				<OverviewCard
 					icon={clipLogo}
 					label='Total Purpose'
 					value='11'
+					className='tp border-b border-l border-black lg:border-0 lg:border-[#DADCE0]'
 				/>
 			</div>
 		</div>
 	);
 }
 
-function OverviewCard({ icon, label, value }) {
+function OverviewCard({ icon, label, value, className }) {
 	return (
-		<div className='flex flex-col py-[1rem] px-5 gap-4 flex-auto'>
+		<div
+			className={`flex flex-col py-[1rem] px-5 gap-4 flex-auto ${className}`}>
 			<div className='text-[.89rem] font-semibold'>
 				{label}
 			</div>
@@ -43,9 +46,10 @@ function OverviewCard({ icon, label, value }) {
 	);
 }
 
-function CandidatesCard() {
+function CandidatesCard({ className }) {
 	return (
-		<div className='flex flex-col py-[1rem] px-5 gap-4 flex-auto'>
+		<div
+			className={`flex flex-col py-[1rem] px-5 gap-4 flex-auto ${className}`}>
 			<div className='text-[.89rem] font-semibold'>
 				Candidates
 			</div>
@@ -70,9 +74,10 @@ function CandidatesCard() {
 	);
 }
 
-function CandidatesSourceCard() {
+function CandidatesSourceCard({ className }) {
 	return (
-		<div className='flex flex-col py-[1rem] px-5 gap-4 flex-auto'>
+		<div
+			className={`flex flex-col py-[1rem] px-5 gap-4 flex-auto ${className}`}>
 			<div className='text-[.89rem] font-semibold'>
 				Candidates Source
 			</div>
