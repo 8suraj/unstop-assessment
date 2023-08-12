@@ -12,11 +12,13 @@ import searchIcon from '../../assets/svgs/search.svg';
 import filterIcon from '../../assets/svgs/filter.svg';
 import statIcon from '../../assets/svgs/stat.svg';
 import { useToggle } from '../../context/nav.context';
+import { ActionTypes } from '../../context/nav.context';
+
+//options for slect menu
 const options = [
 	{ value: 1, label: 'Practice' },
 	{ value: 2, label: 'Mock' },
 ];
-import { ActionTypes } from '../../context/nav.context';
 
 export default function AssessmentRouter() {
 	const { state, dispatch } = useToggle();

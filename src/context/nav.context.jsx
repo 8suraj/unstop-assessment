@@ -7,7 +7,6 @@ import {
 const ToggleContext = createContext();
 
 const reducer = (state, action) => {
-	console.log(action);
 	switch (action.type) {
 		case ActionTypes.Active:
 			return (state = true);
@@ -17,7 +16,7 @@ const reducer = (state, action) => {
 			return false;
 	}
 };
-
+//the context provider for the mobile menu
 export const ToggleProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, false);
 
@@ -27,7 +26,7 @@ export const ToggleProvider = ({ children }) => {
 		</ToggleContext.Provider>
 	);
 };
-
+//custome hook to get state and the dispatcher
 export const useToggle = () => {
 	const context = useContext(ToggleContext);
 	if (!context) {
@@ -37,7 +36,7 @@ export const useToggle = () => {
 	}
 	return context;
 };
-
+//
 export const ActionTypes = {
 	Active: 'Active',
 	InActive: 'InActive',

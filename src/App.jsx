@@ -5,10 +5,10 @@ import {
 } from 'react-router-dom';
 import {
 	AssessmentRouter,
-	// DashboardRouter,
+	DashboardRouter,
 } from './router';
-import DashboardRouter from './router/dashboard/dashboard.router';
 import { Navigation } from './components';
+//using create browser router instead of browser router as it has enchance capabilities such as loader to pre load data
 const router = createBrowserRouter([
 	{
 		path: '/',

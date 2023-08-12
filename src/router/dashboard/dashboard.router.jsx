@@ -2,6 +2,8 @@ import humburgerLogo from '../../assets/svgs/2.svg';
 import { useToggle } from '../../context/nav.context';
 import { ActionTypes } from '../../context/nav.context';
 import Comp from '../../assets/svgs/comp.svg';
+
+// just a demo page
 export default function DashboardRouter({ text }) {
 	const { dispatch } = useToggle();
 	return (

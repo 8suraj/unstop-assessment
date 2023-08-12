@@ -47,10 +47,10 @@ function AssessmentFooter() {
 				<div className='user-styles bg-[#E9407A] transform -translate-x-full -translate-y-1/4'>
 					LP
 				</div>
-				<div className='user-styles bg-[#E9407A] -translate-x-2/4 -translate-y-1/4'>
+				<div className='user-styles bg-[#3079E1] -translate-x-2/4 -translate-y-1/4'>
 					LP
 				</div>
-				<div className='user-styles bg-[#E9407A] transform -translate-y-1/4'>
+				<div className='user-styles bg-[#6548EE] transform -translate-y-1/4'>
 					LP
 				</div>
 			</div>
