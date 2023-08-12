@@ -37,6 +37,23 @@ export default function AssessmentRouter() {
 				options={options}
 			/>
 			<div
+				className='fixed rounded-full bg-[#0073E6] bottom-[15vh] right-[1vh] w-9 h-9 flex items-center justify-center lg:hidden'
+				onClick={() => setAssessment(true)}>
+				<div>
+					<svg
+						width='30'
+						height='30'
+						viewBox='0 0 30 30'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							d='M23.3333 16.1905H16.1905V23.3333H13.8095V16.1905H6.66666V13.8095H13.8095V6.66666H16.1905V13.8095H23.3333V16.1905Z'
+							fill='white'
+						/>
+					</svg>
+				</div>
+			</div>
+			<div
 				className={`w-full lg:w-[89%]  lg:ml-40 lg:px-4  ${
 					state || assessment ? 'overflow-hidden ' : ''
 				}`}>
