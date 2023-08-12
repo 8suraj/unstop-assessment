@@ -54,11 +54,8 @@ export default function Index() {
 					<div className='bg-white'>
 						<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border py-2'>
 							<NavLink
-								to='asd'
-								className={`hidden ${({ isActive }) =>
-									isActive
-										? ' py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6] '
-										: ' lg:block py-[.65rem] px-4  text-xl font-semibold'}`}>
+								to='/'
+								className='hidden py-[.65rem] px-4  lg:block   text-xl font-semibold '>
 								Assessments
 							</NavLink>
 							<div className='px-5 hidden lg:block'>
@@ -81,7 +78,7 @@ export default function Index() {
 							</NavLink>
 
 							<NavLink
-								to='asd'
+								to='unstop/assessments'
 								className={({ isActive }) =>
 									isActive
 										? 'py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6]'
