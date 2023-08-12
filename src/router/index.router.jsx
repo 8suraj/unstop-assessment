@@ -6,12 +6,16 @@ import {
 	NewAssessment,
 	Assessment,
 	AssessmentCreator,
+	Overview,
 } from '../components';
 import { useState } from 'react';
 import searchIcon from '../assets/svgs/search.svg';
 import filterIcon from '../assets/svgs/filter.svg';
 import statIcon from '../assets/svgs/stat.svg';
-
+const options = [
+	{ value: 1, label: 'Practice' },
+	{ value: 2, label: 'Mock' },
+];
 export default function Index() {
 	const [menu, setMenu] = useState(false);
 	const [assessment, setAssessment] = useState(false);
@@ -26,6 +30,7 @@ export default function Index() {
 				<AssessmentCreator
 					onClose={setAssessment}
 					active={assessment}
+					options={options}
 				/>
 
 				<div
@@ -46,58 +51,75 @@ export default function Index() {
 							<img src={Comp} alt='' />
 						</div>
 					</div>
-					<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border'>
-						<NavLink
-							to='asd'
-							className={({ isActive }) =>
-								isActive
-									? 'hidden py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6] '
-									: 'hidden py-[.65rem] px-4  '
-							}>
-							Assessments
-						</NavLink>
-						<NavLink
-							className={({ isActive }) =>
-								isActive
-									? 'py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6] '
-									: 'py-[.65rem] px-4  '
-							}>
-							My Assessments
-						</NavLink>
-
-						<NavLink
-							to='asd'
-							className={({ isActive }) =>
-								isActive
-									? 'py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6]'
-									: 'py-[.65rem] px-4 lg:hidden'
-							}>
-							Unstop Assessments
-						</NavLink>
-					</nav>
-
-					<div className=' flex flex-col py-5 px-4 gap-4 bg-white lg:grid lg:grid-cols-3  lg:w-full lg:gap-[1.8rem] lg:p-5'>
-						<div className='flex justify-between items-center lg:hidden w-max-full'>
-							<div className='font-semibold text-base '>
-								My Assessment
+					<div className='bg-white'>
+						<nav className='w-full border-b-2 border-[#F6F8FA] list-none flex items-center justify-center text-[.89rem] font-medium lg:justify-start bg-white lg:box-border py-2'>
+							<NavLink
+								to='asd'
+								className={`hidden ${({ isActive }) =>
+									isActive
+										? ' py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6] '
+										: ' lg:block py-[.65rem] px-4  text-xl font-semibold'}`}>
+								Assessments
+							</NavLink>
+							<div className='px-5 hidden lg:block'>
+								<svg
+									width='2'
+									height='46'
+									viewBox='0 0 2 46'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'>
+									<path d='M1 0V46' stroke='#DADCE0' />
+								</svg>
 							</div>
-							<div className='flex gap-5 items-center '>
-								<div>
-									<img src={searchIcon} alt='' />
+							<NavLink
+								className={({ isActive }) =>
+									isActive
+										? 'py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6] '
+										: 'py-[.65rem] px-4  '
+								}>
+								My Assessments
+							</NavLink>
+
+							<NavLink
+								to='asd'
+								className={({ isActive }) =>
+									isActive
+										? 'py-[.65rem] px-4 border-b-2 border-[#0073E6] text-[#0073E6]'
+										: 'py-[.65rem] px-4 lg:hidden'
+								}>
+								Unstop Assessments
+							</NavLink>
+						</nav>
+						<Overview />
+
+						<h1 className='px-4 font-medium text-[1.15rem] hidden lg:block'>
+							My Assessment
+						</h1>
+						<div className=' flex flex-col py-5 px-4 gap-4  lg:grid lg:grid-cols-3  lg:w-full lg:gap-[1.8rem] lg:p-5'>
+							<div className='flex justify-between items-center lg:hidden w-max-full'>
+								<div className='font-semibold text-base '>
+									My Assessment
 								</div>
-								<div>
-									<img src={filterIcon} alt='' />
-								</div>
-								<div>
-									<img src={statIcon} alt='' />
+								<div className='flex gap-5 items-center '>
+									<div>
+										<img src={searchIcon} alt='' />
+									</div>
+									<div>
+										<img src={filterIcon} alt='' />
+									</div>
+									<div>
+										<img src={statIcon} alt='' />
+									</div>
 								</div>
 							</div>
+							<NewAssessment
+								setAssessment={setAssessment}
+							/>
+							<Assessment />
+							<Assessment />
+							<Assessment />
+							<Assessment />
 						</div>
-						<NewAssessment setAssessment={setAssessment} />
-						<Assessment />
-						<Assessment />
-						<Assessment />
-						<Assessment />
 					</div>
 				</div>
 			</div>
